@@ -169,12 +169,11 @@ export async function prepareAndSignUserOperations<
             const merkleRoot = merkleTree.getHexRoot() as Hex
             const toEthSignedMessageHash = hashMessage({ raw: merkleRoot })
 
-            const passkeySig =
-                await account.kernelPluginManager.sudoValidator?.signMessage({
-                    message: {
-                        raw: toEthSignedMessageHash
-                    }
-                })
+            const passkeySig = await account.kernelPluginManager.signMessage({
+                message: {
+                    raw: toEthSignedMessageHash
+                }
+            })
 
             if (!passkeySig) {
                 throw new Error(
