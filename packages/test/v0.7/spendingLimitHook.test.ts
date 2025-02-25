@@ -169,7 +169,7 @@ describe("Spending Limit Hook", () => {
     })
 
     test(
-        "Account with sudo validator can't send a ERC20 trnasfer transaction exceeding the allowance of spending limit hook",
+        "Account with sudo validator can't send a ERC20 transfer transaction exceeding the allowance of spending limit hook",
         async () => {
             const amountToTransfer = 10000n
             const transferData = encodeFunctionData({
@@ -231,7 +231,7 @@ describe("Spending Limit Hook", () => {
     )
 
     test(
-        "Account with regular validator can't send a ERC20 trnasfer transaction exceeding the allowance of spending limit hook",
+        "Account with regular validator can't send a ERC20 transfer transaction exceeding the allowance of spending limit hook",
         async () => {
             const amountToTransfer = 10000n
             const transferData = encodeFunctionData({
